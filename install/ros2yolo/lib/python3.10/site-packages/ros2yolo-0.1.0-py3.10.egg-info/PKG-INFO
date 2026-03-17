@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: ros2yolo
+Version: 0.1.0
+Summary: ROS2 YOLO node
+Author: Your Name
+Requires-Dist: opencv-python
+Requires-Dist: numpy
+Requires-Dist: ultralytics
+Dynamic: author
+Dynamic: requires-dist

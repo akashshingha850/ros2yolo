@@ -1,0 +1,9 @@
+source;share/ros2yolo/hook/path.ps1
+source;share/ros2yolo/hook/path.dsv
+source;share/ros2yolo/hook/path.sh
+source;share/ros2yolo/hook/pythonpath.ps1
+source;share/ros2yolo/hook/pythonpath.dsv
+source;share/ros2yolo/hook/pythonpath.sh
+source;share/ros2yolo/hook/pythonscriptspath.ps1
+source;share/ros2yolo/hook/pythonscriptspath.dsv
+source;share/ros2yolo/hook/pythonscriptspath.sh

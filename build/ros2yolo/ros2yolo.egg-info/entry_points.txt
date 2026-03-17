@@ -1,0 +1,3 @@
+[console_scripts]
+convert_to_pose = ros2yolo.convert_to_pose:main
+yolo_node = ros2yolo.yolo_node:main

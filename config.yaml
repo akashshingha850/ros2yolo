@@ -1,0 +1,23 @@
+predict:
+  # Detection tuning (single source of truth)
+  task: detect
+  model: yolo11s-roadsight.pt
+  imgsz: 640
+  conf: 0.75
+  iou: 0.7
+  device: 0
+  max_det: 10
+  augment: false
+  classes: [0] # [0, 1, 2] for example
+  half: true
+
+node:
+  # ROS topics and visualization
+  image_topic: /camera/image
+  camera_info_topic: /camera/camera_info
+  output_image_topic: /yolo/image
+  detections_topic: /yolo/detections
+  debug: false
+  line_thickness: 2
+  hide_labels: false
+  hide_conf: false
