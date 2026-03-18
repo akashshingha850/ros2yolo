@@ -2,14 +2,14 @@ predict:
   # Detection tuning (single source of truth)
   task: detect
   model: yolo11s-roadsight.pt
-  imgsz: 640
+  imgsz: 384
   conf: 0.75
   iou: 0.7
-  device: 0
+  device: -1
   max_det: 10
   augment: false
   classes: [0] # [0, 1, 2] for example
-  half: true
+  half: false
 
 node:
   # ROS topics and visualization

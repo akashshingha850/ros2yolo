@@ -1,0 +1,19 @@
+services:
+  ros2yolo:
+    build: .
+    container_name: ros2yolo
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      - DISPLAY
+      - PYTHONFAULTHANDLER=1
+      - ROS_DOMAIN_ID=0
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+      - ROS_LOCALHOST_ONLY=0
+      - FASTRTPS_DEFAULT_PROFILES_FILE=/workspace/ros2yolo/fastdds_no_shm.xml
+    volumes:
+      - ./:/workspace/ros2yolo
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /home/ubuntu/ros2_ws/install:/home/ubuntu/ros2_ws/install:ro
+      - ./fastdds_no_shm.xml:/workspace/ros2yolo/fastdds_no_shm.xml:ro
+    command: /workspace/ros2yolo/start_yolo.sh

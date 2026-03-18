@@ -4,6 +4,8 @@ import threading
 import cv2
 import numpy as np
 import rclpy
+import faulthandler
+import signal
 import yaml
 from cv_bridge import CvBridge
 from geometry_msgs.msg import PoseWithCovariance
@@ -16,6 +18,13 @@ try:
     from ultralytics import YOLO
 except Exception:
     YOLO = None
+
+# Enable faulthandler and register SIGUSR1 to dump Python thread tracebacks
+try:
+    faulthandler.enable()
+    faulthandler.register(signal.SIGUSR1, all_threads=True)
+except Exception:
+    pass
 
 
 class YoloNode(Node):
